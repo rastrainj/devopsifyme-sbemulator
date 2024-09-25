@@ -69,6 +69,12 @@ namespace ServiceBusEmulator.RabbitMq.Endpoints
 
         public override void OnFlow(FlowContext flowContext)
         {
+            if (flowContext.Link.IsDraining)
+            {
+                flowContext.Link.CompleteDrain();
+                return;
+            } 
+            
             int requestedCount = flowContext.Messages;
 
             EventingBasicConsumer consumer = new(Channel);
