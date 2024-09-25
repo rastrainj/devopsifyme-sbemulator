@@ -58,10 +58,9 @@ namespace ServiceBusEmulator.IntegrationTests
             await args.CompleteMessageAsync(args.Message, args.CancellationToken);            
         }
 
-        private Task OnProcessErrorAsync(ProcessErrorEventArgs args)
+        private async Task OnProcessErrorAsync(ProcessErrorEventArgs args)
         {
-            await Task.Delay(100);
-            await args.CompleteMessageAsync(args.Message, args.CancellationToken);            
+            await Task.Delay(100);           
         }    
     }
 }
