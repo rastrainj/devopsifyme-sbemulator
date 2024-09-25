@@ -2,7 +2,7 @@ version: "3.9"
 services:
   sbemulator:
     environment:
-      - Emulator__QueuesAndTopics=test-queue;test-topic/Subscriptions/test-sub1;test-topic/Subscriptions/test-sub2
+      - Emulator__QueuesAndTopics=test-queue;test-topic/Subscriptions/test-sub1;test-topic/Subscriptions/test-sub2;test-topic/Subscriptions/test-sub3
 
   integration:
     image: integration-tests:latest
